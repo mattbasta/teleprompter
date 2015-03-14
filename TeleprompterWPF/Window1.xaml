@@ -1,0 +1,26 @@
+﻿<Window x:Class="Window1" x:Name="TeleprompterMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Teleprompter" Height="445.6" Width="600" WindowState="Normal" WindowStyle="ThreeDBorderWindow" Loaded="MoveText" RenderOptions.EdgeMode="Unspecified" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF000000">
+      <Canvas x:Name="TelepTextCanvas" Background="#FF000000" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality" OverridesDefaultStyle="False" Typography.Variants="Normal" SnapsToDevicePixels="True">
+        <TextBlock Canvas.Left="0" Canvas.Top="200" Foreground="White" Width="600" TextWrapping="Wrap" FontSize="30" x:Name="TelepText" Background="#00000000" TextAlignment="Left" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Aliased" NumberSubstitution.CultureSource="Text" NumberSubstitution.Substitution="Context" OverridesDefaultStyle="True">
+        
+        Some text...</TextBlock>
+      </Canvas>
+      <WrapPanel x:Name="ControlPanel" Height="32" Background="#FF000000" Margin="0,0,0,0" VerticalAlignment="Bottom" Opacity="0.5">
+        <Label Margin="0,0,0,0" Name="SpeedLabel" Foreground="#FFFFFFFF" Width="60" HorizontalContentAlignment="Center" HorizontalAlignment="Left" FontSize="14">Speed</Label>
+        <Slider HorizontalAlignment="Left" Margin="0,0,0,0" Name="SpeedSlider" VerticalAlignment="Bottom" Width="104" Minimum="-50" Maximum="50" Ticks="0" SmallChange="1" />
+        <Button Height="23" Margin="10,0,0,0" Name="ResetText" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="50">Reset</Button>
+        <Label Margin="0,0,0,0" Name="SizeLabel" Foreground="#FFFFFFFF" Width="60" HorizontalContentAlignment="Center" HorizontalAlignment="Left" FontSize="14">Size</Label>
+        <Slider HorizontalAlignment="Left" Margin="0,0,0,0" Name="SizeSlider" VerticalAlignment="Bottom" Width="104" Minimum="9" Maximum="72" Value="30" />
+        <Button Height="23" Margin="10,0,0,0" Name="FullScreen" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75">Full Screen</Button>
+        <Button Height="23" Margin="10,0,0,0" Name="EditNews" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75">
+          <Button.BitmapEffect>
+            <OuterGlowBitmapEffect GlowColor="LightSkyBlue" Opacity="1" GlowSize="12" />
+          </Button.BitmapEffect>
+          Edit News
+        </Button>
+      </WrapPanel>
+      </Grid>
+</Window>

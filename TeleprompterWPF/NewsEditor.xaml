@@ -1,0 +1,34 @@
+﻿<Window x:Class="NewsEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Teleprompter" Height="416" Width="622.4" WindowStyle="ToolWindow">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="150" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <ListView x:Name="Stories" Grid.Column="0" Margin="0,0,5,0" />
+    <GridSplitter Width="5" />
+    <TabControl x:Name="Tabs" Grid.Column="1">
+      <TabItem Header="Editor" IsSelected="True">
+        <Grid>
+          <Label Height="24" HorizontalAlignment="Left" Margin="16,28,0,0" VerticalAlignment="Top" Width="Auto">Story Title:</Label>
+          <TextBox Margin="100,30,16,0" x:Name="StoryTitle" Height="24" VerticalAlignment="Top" HorizontalAlignment="Stretch"></TextBox>
+          <Label Height="24" HorizontalAlignment="Left" Margin="16,64,0,0" VerticalAlignment="Top" Width="Auto">Story Content:</Label>
+          <TextBox Margin="100,64,16,64" x:Name="StoryContent" TextWrapping="Wrap"></TextBox>
+          <Button x:Name="Add" Width="180" Height="24" HorizontalAlignment="Right" Margin="0,0,16,37" VerticalAlignment="Bottom">Add Story</Button>
+          <Button x:Name="OkClose" Width="125" Height="24" HorizontalAlignment="Right" Margin="0,0,16,5" VerticalAlignment="Bottom">Save and Close</Button>
+          <Button x:Name="CancelUpdate" Height="24" Margin="152,0,200,37" VerticalAlignment="Bottom" Focusable="True" ClickMode="Release" IsEnabled="False">Cancel Update</Button>
+        </Grid>
+      </TabItem>
+      <TabItem Header="Import">
+        <Grid>
+          <Label Height="24" HorizontalAlignment="Left" Margin="10,24,0,0" Name="Label1" VerticalAlignment="Top" Width="80">RSS 2.0 Feed</Label>
+          <TextBox Height="26" Margin="96,24,80,0" Name="RSSFeed" VerticalAlignment="Top">http://your.rss.feed/</TextBox>
+          <Button Height="23" Margin="0,24,16,0" Name="ImportRSS" VerticalAlignment="Top" HorizontalAlignment="Right" Width="59">Import</Button>
+        </Grid>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</Window>
+
